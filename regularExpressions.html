@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #regular_expressions_table{
+            text-align: center;
+            border: 2px dashed #000000;
+        }
+        th, td {
+            border: 1px double #000000;
+        }
+    </style>
+</head>
+<body>
+    <table id="regular_expressions_table">
+        <thead>
+            <tr>
+                <th>文字</th>
+                <th>表現例</th>
+                <th>マッチ例</th>
+                <th>概要</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>.    </th>
+                <td>.    </td>
+                <td>あ<br>A    </td>
+                <td>任意の１文字にマッチします    </td>
+            </tr>
+            <tr>
+                <th>+    </th>
+                <td>go+gle    </td>
+                <td>go...gle    </td>
+                <td>直前の文字が１回以上繰り返す場合にマッチします。<br>最長一致。条件に合う最長の部分に一致します。    </td>
+            </tr>
+            <tr>
+                <th>*</th>
+                <td>go*gle</td>
+                <td>ggle<br>go...gle</td>
+                <td>直前の文字が０回以上繰り返す場合にマッチします。<BR>最長一致。条件に合う最長の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th>?</th>
+                <td>go?gle</td>
+                <td>ggle<br>gogle</td>
+                <td>直前の文字が０個か１個の場合にマッチします。<BR>最長一致。条件に合う最長の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th>+?</th>
+                <td>go+?gle</td>
+                <td>gogle<br>go...gle</td>
+                <td>直前の文字が１回以上繰り返す場合にマッチします。<br>最短一致。条件に合う最短の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th>*?</th>
+                <td>go*?gle</td>
+                <td>ggle<br>go...gle</td>
+                <td>直前の文字が０回以上繰り返す場合にマッチします。<br>最短一致。条件に合う最短の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th>??</th>
+                <td>go??gle</td>
+                <td>ggle<br>gogle</td>
+                <td>直前の文字が０個か１個の場合にマッチします。<br>最短一致。条件に合う最短の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th>|</th>
+                <td>goog(le|ol)</td>
+                <td>google<br>googol</td>
+                <td>いずれかの条件（OR条件）として使われます。</td>
+            </tr>
+            <tr>
+                <th>\</th>
+                <td>go/+gle</td>
+                <td>go+gle</td>
+                <td>直後の正規表現記号を エスケープ します。</td>
+            </tr>
+            <tr>
+                <th>[...]</th>
+                <td>[abc]<br>[a-c]<br>[0-9]</td>
+                <td>a, b, c, 8</td>
+                <td>角括弧に含まれるいずれか１文字にマッチします。	</td>
+            </tr>
+            <tr>
+                <th>[^...]</th>
+                <td>[^abc]<br>[^a-c]</td>
+                <td>a, b, c以外</td>
+                <td>角括弧に含まれる文字以外にマッチします。</td>
+            </tr>
+            <tr>
+                <th>(...)</th>
+                <td>goog(le|ol)</td>
+                <td>google<br>googol</td>
+                <td>文字を１つのグループにまとめることができます。	</td>
+            </tr>
+            <tr>
+                <th>{n}</th>
+                <td>a{3}</td>
+                <td>aaa</td>
+                <td>直前の文字の桁数を指定できます。	</td>
+            </tr>
+            <tr>
+                <th>{n,}</th>
+                <td>a{3,}</td>
+                <td>aaa<br>aaaa...</td>
+                <td>直前の文字の最小桁数のみ指定できます。	</td>
+            </tr>
+            <tr>
+                <th>{n,m}</th>
+                <td>a{3,4}</td>
+                <td>aaaa<br>aaaa</td>
+                <td>直前の文字の最小桁数と最大桁数を指定できます。<br>
+                    最長一致。条件に合う最長の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th>{n,m}?</th>
+                <td>a{3,4}/</td>
+                <td>aaa<br>aaaa</td>
+                <td>直前の文字の最小桁数と最大桁数を指定できます。<br>
+                    最短一致。条件に合う最短の部分に一致します。</td>
+            </tr>
+            <tr>
+                <th colspan="4" rowspan="2">定義済みの正規表現</th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </tbody>
+    </table>
+    
+</body>
+</html>
